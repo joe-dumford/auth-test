@@ -6,6 +6,7 @@ import axios from 'axios'
  import { Route, Link } from 'react-router-dom'
 
 // ALL MY IMPORTS
+ import Landing from './components/landing'
  import Signup from './components/sign-up'
  import LoginForm from './components/login-form'
  import Navbar from './components/navbar'
@@ -56,30 +57,47 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-
+<div>
 <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
+      <div>
         {this.state.loggedIn &&
           <p>Join the party, {this.state.username}!</p>
         }
-   
+      </div>
+  
+</div>
+    
         {/* Routes to different components */}
+
         <Route
           exact path="/"
           component={Home} />
+          
         <Route
           path="/login"
           render={() =>
             <LoginForm
               updateUser={this.updateUser}
-            />}
+            />}   
         />
+
         <Route
           path="/signup"
           render={() =>
             <Signup/>}
         />
 
+        <Route
+          path="/landing"
+          render={() =>
+            <Landing/>}
+        />
+
+        {/* NOTE: Tomorrow handle the logout route...
+      <p>  PROBABLY GOING TO NEED A ROUTE HERE FOR LOGOUT. MOST LIKELY NEED TO HANDLE LOGOUT LIKE I HANDLED SIGNUP AND LOGIN. BREAK IT INTO ITS OWN COMPONENT AND CALL IT HERE (RIGHT NOW IT'S BEING HANDLED IN NAVBAR.JS AT LINE 14) 
+      </p> */}
+      
       </div>
     );
   }
@@ -93,3 +111,4 @@ class App extends React.Component {
 // }
 // }
 export default App;
+

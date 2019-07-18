@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import Header from './Header';
+import Signup from './sign-up'
+import LoginForm from './login-form'
+import Navbar from './navbar'
 import Form from './Form';
 import Present from './Present';
 import TapeDeck from './TapeDeck/'
 
-class Home extends Component {
+
+class Landing extends Component {
     constructor() {
         super()
     }
@@ -13,14 +17,15 @@ class Home extends Component {
         return (
             <div>
                 <Header></Header>
-                {/* <div className="content">
+                <div className="content">
                 <Form />
                 <Present /> 
                 <TapeDeck />
-                </div> */}
+                </div>
             </div>
         )
     }
 }
 
-export default Home
+export default Landing
+

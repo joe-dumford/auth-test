@@ -39,9 +39,9 @@ class LoginForm extends Component {
                         loggedIn: true,
                         username: response.data.username
                     })
-                    // update the state to redirect to home
+                    // update the state to redirect to home AKA localhost:3000
                     this.setState({
-                        redirectTo: '/'
+                        redirectTo: '/landing'
                     })
                 }
             }).catch(error => {

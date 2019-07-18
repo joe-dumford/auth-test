@@ -19,7 +19,8 @@ class Navbar extends Component {
           if (response.status === 200) {
             this.props.updateUser({
               loggedIn: false,
-              username: null
+              username: null,
+              redirectTo: '/'
             })
           }
         }).catch(error => {
@@ -38,20 +39,24 @@ class Navbar extends Component {
                 <header className="navbar App-header" id="nav-container">
                     <div className="col-4" >
                         {loggedIn ? (
+                            <button>
                             <section className="navbar-section">
-                                <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
+                                <Link to="/" className="btn btn-link text-secondary" onClick={this.logout}>
                                 <span className="text-secondary">logout</span></Link>
-
+                       
                             </section>
+                            </button>
                         ) : (
                             <section>
-
-                                <button
+{/*BUTTON BELOW USED TO TAKE YOU HOME BUT NOW HOME IS OUR MAIN PAGE SO BUTTON IS USELESS*/}
+                                {/* <button
                                 className="navbar-section">
                                     <Link to="/" className="btn btn-link text-secondary">
                                         <span className="text-secondary">home</span>
                                         </Link>
-                                 </button>
+                                 </button> */}
+
+ {/* BUTTON ABOVE USED TO TAKE YOU HOME BUT NOW HOME IS OUR MAIN PAGE SO BUTTON IS USELESS */}
 
                                  <button
                                 className="navbar-section">
